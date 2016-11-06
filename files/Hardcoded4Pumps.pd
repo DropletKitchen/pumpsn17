@@ -1,0 +1,310 @@
+#N canvas 45 23 1325 812 10;
+#X declare -lib mrpeach;
+#X obj -24131 714 unpackOSC;
+#X obj -24131 694 o.io.slipserial;
+#X msg -24325 43 close;
+#X obj -24131 673 packOSC;
+#X msg -24325 5 devices;
+#X floatatom -23943 575 5 0 0 0 - - -;
+#X floatatom -23832 595 5 0 0 0 - - -;
+#X obj -23943 555 routeOSC /direction;
+#X obj -23832 575 routeOSC /flowrate;
+#X obj -23943 535 routeOSC /pump0;
+#X floatatom -23716 575 5 0 0 0 - - -;
+#X floatatom -23605 594 5 0 0 0 - - -;
+#X obj -23716 554 routeOSC /direction;
+#X obj -23605 574 routeOSC /flowrate;
+#X obj -23716 534 routeOSC /pump1;
+#X floatatom -23944 678 5 0 0 0 - - -;
+#X floatatom -23833 698 5 0 0 0 - - -;
+#X obj -23944 658 routeOSC /direction;
+#X obj -23833 678 routeOSC /flowrate;
+#X obj -23944 638 routeOSC /pump2;
+#X floatatom -23718 678 5 0 0 0 - - -;
+#X floatatom -23607 698 5 0 0 0 - - -;
+#X obj -23718 658 routeOSC /direction;
+#X obj -23607 678 routeOSC /flowrate;
+#X obj -23718 638 routeOSC /pump3;
+#X msg -24325 62 devicename /dev/tty.usbmodem581721 \, baud 115200
+;
+#X obj -24098 162 hsl 128 30 0 1000 0 0 empty empty PUMP0_500uL_SGE
+200 15 0 15 -262130 -1 -1 2600 1;
+#X obj -24098 214 hsl 128 30 0 1000 0 0 empty empty PUMP1_500uL_SGE
+200 15 0 15 -204786 -1 -1 0 1;
+#X obj -24098 266 hsl 128 30 0 1000 0 0 empty empty PUMP2_100uL_SGE
+200 15 0 15 -204800 -1 -1 0 1;
+#X obj -23991 10 print;
+#X msg -24131 565 /;
+#X obj -24131 605 list trim;
+#X obj -24098 318 hsl 128 30 0 1000 0 0 empty empty PUMP3_100uL_SGE
+200 15 0 15 -203904 -1 -1 0 1;
+#X obj -23966 194 hradio 10 1 0 2 empty empty empty 0 -8 0 10 -262130
+-1 -1 0;
+#X obj -24098 194 hsl 128 10 0 1000 0 0 empty empty empty 0 0 0 20
+-262130 -1 -1 0 1;
+#X obj -23966 162 hradio 30 1 0 2 empty empty empty 0 -8 0 10 -262130
+-66577 -66577 0;
+#X obj -24131 585 pack s f f f f f f f f;
+#X obj -24164 622 tgl 30 0 empty empty empty 0 0 0 12 -260097 -1 -1
+0 1;
+#X obj -24227 570 bng 32 250 50 0 empty empty push_settings 0 -8 0
+12 -260097 -1 -1;
+#X obj -24131 652 spigot;
+#X obj -24192 582 delay 100;
+#X obj -24192 602 delay 200;
+#X obj -23966 246 hradio 10 1 0 2 empty empty empty 0 -8 0 10 -204786
+-1 -1 0;
+#X obj -24098 246 hsl 128 10 0 1000 0 0 empty empty empty -2 -8 0 10
+-204786 -1 -1 0 1;
+#X obj -23966 298 hradio 10 1 0 2 empty empty empty 0 -8 0 10 -204800
+-1 -1 0;
+#X obj -24098 298 hsl 128 10 0 1000 0 0 empty empty empty -2 -8 0 10
+-204800 -1 -1 0 1;
+#X obj -23966 350 hradio 10 1 0 2 empty empty empty 0 -8 0 10 -203904
+-1 -1 0;
+#X obj -24098 350 hsl 128 10 0 1000 0 0 empty empty empty -2 -8 0 10
+-203904 -1 -1 0 1;
+#X obj -23966 214 hradio 30 1 0 2 empty empty empty 0 -8 0 10 -204786
+-1 -1 0;
+#X obj -23966 266 hradio 30 1 0 2 empty empty empty 0 -8 0 10 -204800
+-1 -1 0;
+#X obj -23966 318 hradio 30 1 0 2 empty empty empty 0 -8 0 10 -203904
+-1 -1 0;
+#X text -23955 4 connect this to objects for debugging \; (prints to
+console window);
+#X msg -24101 135 / 0 0 0 0 0 0 0 0;
+#X obj -23987 138 tgl 12 0 empty empty all_off 20 6 0 12 -1 -1 -1 0
+1;
+#X msg -23755 211 bang;
+#X obj -23755 231 f;
+#X obj -23730 231 + 1;
+#X floatatom -23755 272 6 0 0 3 seconds - -;
+#X floatatom -23720 211 5 0 0 0 - - -;
+#X obj -23686 212 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
+-1 -1;
+#X obj -23755 174 tgl 15 0 empty empty on/off 20 7 0 12 -260097 -1
+-1 0 1;
+#X obj -23755 191 metro 1000;
+#X obj -23668 350 bng 15 250 50 0 empty empty empty 17 7 0 10 -204800
+-1 -1;
+#X obj -23691 329 bng 15 250 50 0 empty empty empty 17 7 0 10 -203904
+-1 -1;
+#X obj -23646 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -204786
+-1 -1;
+#X obj -23623 392 bng 15 250 50 0 empty empty empty 17 7 0 10 -262130
+-1 -1;
+#X obj -23601 413 bng 15 250 50 0 empty empty empty 0 0 0 12 -261682
+-1 -1;
+#X obj -23712 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -232576
+-1 -1;
+#X obj -23485 290 bng 15 250 50 0 empty empty put_time(s)_here_when_events_should_happen
+17 7 0 12 -262144 -1 -1;
+#X obj -24162 152 send data;
+#X obj -24319 624 tgl 12 0 empty empty X=direct_drive_mode 20 6 0 12
+-1 -1 -1 0 1;
+#X obj -24319 638 tgl 12 0 empty empty []=bang_to_push 20 6 0 12 -1
+-1 -1 0 1;
+#X obj -24270 22 tgl 20 0 empty empty Open/close_connection 30 10 0
+18 -1 -1 -1 0 1;
+#X obj -24270 45 tgl 12 0 empty empty prints_to_console 20 6 0 12 -1
+-1 -1 0 1;
+#X obj -23387 324 s data;
+#X obj -23387 345 s data;
+#X obj -23387 366 s data;
+#X obj -23386 387 s data;
+#X obj -23386 408 s data;
+#X obj -23386 429 s data;
+#X obj -23689 255 tgl 12 0 empty empty change_turnover_number(seconds)
+15 6 0 12 -1 -1 -1 0 1;
+#X msg -23694 307 / 0 100 0 200 0 300 0 400;
+#X msg -23650 349 / 0 200 0 200 0 200 0 200;
+#X msg -23628 370 / 1 200 1 200 1 200 1 200;
+#X msg -23605 391 / 0 500 0 500 0 500 0 500;
+#X msg -23583 412 / 1 500 1 500 1 500 1 500;
+#X msg -23673 328 / 1 100 1 400 1 300 1 400;
+#X msg -24325 24 open 1;
+#X obj -23943 594 s dirp0;
+#X obj -23944 194 r dirp0;
+#X obj -23944 697 s dirp2;
+#X obj -23718 697 s dirp3;
+#X obj -23832 613 s frp0;
+#X obj -23896 194 r frp0;
+#X obj -23716 594 s dirp1;
+#X obj -23944 246 r dirp1;
+#X obj -23944 298 r dirp2;
+#X obj -23944 350 r dirp3;
+#X obj -23605 612 s frp1;
+#X obj -23896 246 r frp1;
+#X obj -23833 716 s frp2;
+#X obj -23896 298 r frp2;
+#X obj -23607 716 s frp3;
+#X obj -23896 350 r frp3;
+#X obj -24131 542 r bang;
+#X obj -24144 192 s bang;
+#X obj -24144 348 s bang;
+#X obj -24143 244 s bang;
+#X obj -24143 296 s bang;
+#X obj -24192 192 s bwfw0;
+#X obj -24191 244 s bwfw1;
+#X obj -24191 296 s bwfw2;
+#X obj -24192 348 s bwfw3;
+#X obj -24115 523 r bwfw0;
+#X obj -24083 504 r bwfw1;
+#X obj -24051 485 r bwfw2;
+#X obj -24019 466 r bwfw3;
+#X obj -24217 211 s flow0;
+#X floatatom -24313 209 12 0 0 2 flowrate(micL/h) - -;
+#X obj -24217 192 int;
+#X floatatom -24312 261 12 0 0 2 flowrate(micL/h) - -;
+#X obj -24216 244 int;
+#X obj -24216 263 s flow1;
+#X floatatom -24312 313 12 0 0 2 flowrate(micL/h) - -;
+#X obj -24216 296 int;
+#X obj -24216 315 s flow2;
+#X floatatom -24313 365 12 0 0 2 flowrate(micL/h) - -;
+#X obj -24217 348 int;
+#X obj -24217 367 s flow3;
+#X obj -24325 82 s operation;
+#X obj -24044 673 r operation;
+#X obj -24315 129 tgl 20 0 empty empty Control_Pumps 30 10 0 18 -1
+-1 -1 0 1;
+#X obj -24315 152 tgl 12 0 empty empty manually 20 6 0 12 -1 -1 -1
+0 1;
+#X obj -23756 132 tgl 20 0 empty empty Control_Pumps 30 10 0 18 -1
+-1 -1 0 1;
+#X obj -23756 155 tgl 12 0 empty empty automated 20 6 0 12 -1 -1 -1
+0 1;
+#X obj -24175 656 r data;
+#X obj -23755 252 mod 3600;
+#X obj -24099 565 r flow0;
+#X obj -24067 545 r flow1;
+#X obj -24035 526 r flow2;
+#X obj -24002 507 r flow3;
+#X obj -23533 309 tgl 12 0 empty empty put_direction1_flowrate1_dir2_fr2_--_etc
+15 6 0 12 -1 -1 -1 0 1;
+#X obj -23712 288 select 10 200 1000 2000 3600 0;
+#X obj -24314 420 tgl 20 0 empty empty Communication 30 10 0 18 -1
+-1 -1 0 1;
+#X obj -24314 443 tgl 12 0 empty empty to_and_from_microcontroller
+20 6 0 12 -1 -1 -1 0 1;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 2 0 129 0;
+#X connect 3 0 1 0;
+#X connect 4 0 129 0;
+#X connect 5 0 88 0;
+#X connect 6 0 92 0;
+#X connect 7 0 5 0;
+#X connect 7 1 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 1 14 0;
+#X connect 10 0 94 0;
+#X connect 11 0 98 0;
+#X connect 12 0 10 0;
+#X connect 12 1 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 12 0;
+#X connect 14 1 19 0;
+#X connect 15 0 90 0;
+#X connect 16 0 100 0;
+#X connect 17 0 15 0;
+#X connect 17 1 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 17 0;
+#X connect 19 1 24 0;
+#X connect 20 0 91 0;
+#X connect 21 0 102 0;
+#X connect 22 0 20 0;
+#X connect 22 1 23 0;
+#X connect 23 0 21 0;
+#X connect 24 0 22 0;
+#X connect 25 0 129 0;
+#X connect 26 0 105 0;
+#X connect 26 0 119 0;
+#X connect 27 0 107 0;
+#X connect 27 0 121 0;
+#X connect 28 0 108 0;
+#X connect 28 0 124 0;
+#X connect 30 0 36 0;
+#X connect 31 0 39 0;
+#X connect 32 0 106 0;
+#X connect 32 0 127 0;
+#X connect 35 0 105 0;
+#X connect 35 0 109 0;
+#X connect 36 0 31 0;
+#X connect 37 0 39 1;
+#X connect 38 0 37 0;
+#X connect 38 0 40 0;
+#X connect 38 0 41 0;
+#X connect 39 0 3 0;
+#X connect 40 0 36 0;
+#X connect 41 0 37 0;
+#X connect 48 0 107 0;
+#X connect 48 0 110 0;
+#X connect 49 0 108 0;
+#X connect 49 0 111 0;
+#X connect 50 0 106 0;
+#X connect 50 0 112 0;
+#X connect 52 0 69 0;
+#X connect 54 0 55 0;
+#X connect 55 0 56 0;
+#X connect 55 0 136 0;
+#X connect 56 0 55 1;
+#X connect 57 0 142 0;
+#X connect 58 0 55 0;
+#X connect 59 0 58 0;
+#X connect 60 0 61 0;
+#X connect 61 0 54 0;
+#X connect 62 0 82 0;
+#X connect 63 0 86 0;
+#X connect 64 0 83 0;
+#X connect 65 0 84 0;
+#X connect 66 0 85 0;
+#X connect 67 0 81 0;
+#X connect 72 0 73 0;
+#X connect 81 0 74 0;
+#X connect 82 0 76 0;
+#X connect 83 0 77 0;
+#X connect 84 0 78 0;
+#X connect 85 0 79 0;
+#X connect 86 0 75 0;
+#X connect 87 0 129 0;
+#X connect 89 0 33 0;
+#X connect 93 0 34 0;
+#X connect 95 0 42 0;
+#X connect 96 0 44 0;
+#X connect 97 0 46 0;
+#X connect 99 0 43 0;
+#X connect 101 0 45 0;
+#X connect 103 0 47 0;
+#X connect 104 0 30 0;
+#X connect 113 0 36 1;
+#X connect 114 0 36 3;
+#X connect 115 0 36 5;
+#X connect 116 0 36 7;
+#X connect 118 0 117 0;
+#X connect 119 0 118 0;
+#X connect 120 0 122 0;
+#X connect 121 0 120 0;
+#X connect 123 0 125 0;
+#X connect 124 0 123 0;
+#X connect 126 0 128 0;
+#X connect 127 0 126 0;
+#X connect 130 0 1 1;
+#X connect 131 0 132 0;
+#X connect 133 0 134 0;
+#X connect 135 0 3 0;
+#X connect 136 0 57 0;
+#X connect 137 0 36 2;
+#X connect 138 0 36 4;
+#X connect 139 0 36 6;
+#X connect 140 0 36 8;
+#X connect 142 0 67 0;
+#X connect 142 1 63 0;
+#X connect 142 2 62 0;
+#X connect 142 3 64 0;
+#X connect 142 4 65 0;
+#X connect 142 5 66 0;
+#X connect 142 6 68 0;
+#X connect 143 0 144 0;

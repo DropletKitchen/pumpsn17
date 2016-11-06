@@ -1,6 +1,13 @@
+The source code for interfacing with the Open Sound Control (OSC) protocol
+was adapted from OSC sample code and is distributed under a different
+open source liscence: see the source files for copyright and license details. 
+
+All original code is distributed under the following license:
+
+
 MIT License
 
-Copyright (c) 2016 DropletKitchen
+Copyright (c) 2016 Martin Fischlechner and DropletKitchen Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

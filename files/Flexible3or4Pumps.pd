@@ -1,0 +1,48 @@
+#N canvas 10 253 1422 817 10;
+#X floatatom -23566 -35 5 0 0 0 Pump0(uL/h) - -, f 5;
+#X floatatom -23565 63 5 0 0 0 Pump2(uL/h) - -, f 5;
+#X floatatom -23565 14 5 0 0 0 Pump1(uL/h) - -, f 5;
+#X obj -23638 90 s p0;
+#X obj -23598 -52 r p0;
+#X obj -23015 90 s p1;
+#X obj -23598 -3 r p1;
+#X obj -23223 90 s p2;
+#X obj -23600 46 r p2;
+#X obj -23431 90 s p3;
+#X obj -22839 10 s ffrp2;
+#X obj -22839 -38 s ffrp1;
+#X obj -22839 -88 s ffrp0;
+#X obj -23015 -299 r ffrp0;
+#X obj -23223 -299 r ffrp1;
+#X obj -23431 -299 r ffrp2;
+#X obj -23638 -299 r ffrp3;
+#X obj -22955 -235 bng 75 250 50 0 empty empty Bang_here! 0 -20 0 20
+-260097 -1 -1;
+#X msg -22916 -7 1000;
+#X obj -22966 -2 tgl 8 0 empty empty PUMP2 12 4 0 12 -1 -1 -1 0 1;
+#X obj -23005 -99 tgl 8 0 empty empty PUMP0 12 4 0 12 -1 -1 -1 0 1
+;
+#X msg -22936 -55 1000;
+#X obj -22985 -50 tgl 8 0 empty empty PUMP1 12 4 0 12 -1 -1 -1 0 1
+;
+#X obj -22955 -151 t b b b;
+#X msg -22955 -105 1000;
+#X obj -23638 -278 Flexible3or4PumpsGOP;
+#X connect 4 0 0 0;
+#X connect 6 0 2 0;
+#X connect 8 0 1 0;
+#X connect 13 0 25 3;
+#X connect 14 0 25 2;
+#X connect 15 0 25 1;
+#X connect 16 0 25 0;
+#X connect 17 0 23 0;
+#X connect 18 0 10 0;
+#X connect 21 0 11 0;
+#X connect 23 0 24 0;
+#X connect 23 1 21 0;
+#X connect 23 2 18 0;
+#X connect 24 0 12 0;
+#X connect 25 0 3 0;
+#X connect 25 1 9 0;
+#X connect 25 2 7 0;
+#X connect 25 3 5 0;
