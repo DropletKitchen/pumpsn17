@@ -43,6 +43,7 @@ allows for straightforward and live system automation, at a small
 fraction of the cost of a commercial pump.
 
 ** Mechanics - Files and Bill of Materials   
+
 *** Pump Design files (openSCAD)
 
 To be able to adapt the design towards other hardware, we modelled it
@@ -62,7 +63,7 @@ machine). Although you can make parts fit by filing and drilling, this
 is cumbersome and should be avoided.
 
 #+CAPTION: A screenshot of the pump in openSCAD (for the file see [[./files/SyringePump3Dmodel.scad]]).
-[[images/syringepumpxyz.png]]
+[[images/syringepumpxyz.jpeg]]
 #+BEGIN_QUOTE
 A screenshot of the pump in openSCAD (for the file see
 [[./files/SyringePump3Dmodel.scad]]).
@@ -70,7 +71,7 @@ A screenshot of the pump in openSCAD (for the file see
 
 
 #+CAPTION: Simple 3D-printed syringe adaptors to allow the use of syringes with different diameters (see [[./files/3DprintedSyringeAdaptors.scad]]). 
-[[images/3DprintedSyringeAdaptor.png]]
+[[images/3DprintedSyringeAdaptor.jpeg]]
 #+BEGIN_QUOTE
 Simple 3D-printed syringe adaptors to allow the use of syringes with
 different diameters (see [[./files/3DprintedSyringeAdaptors.scad]]).
@@ -194,7 +195,7 @@ Left: Laser cut parts for one pump. Right: Image of components.
   happen rather easily.
 
 #+CAPTION: Pre-assemble motor with leadscrew (bottom right) and component inventory.
-[[images/MotorAssembly.png]]
+[[images/MotorAssembly.jpeg]]
 #+BEGIN_QUOTE
 Pre-assemble motor with leadscrew (bottom right) and component inventory.
 #+END_QUOTE
@@ -238,7 +239,7 @@ the tape in place.
   maximal power applied, the stepper motor can damage the assembly.
 
 #+CAPTION: Three pumps before adjusting the leadscrew part & fixing everything with collets.
-[[images/3Pumps.png]]
+[[images/3Pumps.jpeg]]
 #+BEGIN_QUOTE
 Three pumps before adjusting the leadscrew part & fixing everything
 with collets.
@@ -304,7 +305,7 @@ levels, so put a solder-blob onto the stepper drivers to switch them
 from 5V (default) to 3V logic.
 
 #+CAPTION: Left: Images of the electronics board with three stepper driver boards mounted. Right: Schematic diagram.
-[[images/Electronics.png]]
+[[images/Electronics.jpeg]]
 #+BEGIN_QUOTE
 Left: Images of the electronics board with three stepper driver boards
 mounted. Right: Schematic diagram.
