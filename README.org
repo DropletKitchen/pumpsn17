@@ -418,7 +418,7 @@ small-footprint solution.
 #+CAPTION: Raspberry Pi Model 3 based  to control syringe pumps. The files for the lasercut enclosure are based on a design by Sparkovsky on Thingiverse (https://www.thingiverse.com/thing:1441432).
 [[images/RaspberryPi.jpeg]]
 #+BEGIN_QUOTE
-Raspberry Pi Model 3 based to control syringe pumps. The files for the
+Raspberry Pi Model 3 used to control syringe pumps. The files for the
 lasercut enclosure are based on a design by Sparkovsky on Thingiverse
 (https://www.thingiverse.com/thing:1441432).
 #+END_QUOTE
