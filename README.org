@@ -112,12 +112,12 @@ different diameters (see [[./files/3DprintedSyringeAdaptors.scad]]).
 |                                                                |             |                       |               | 4 pumps: | ~ 425       |
 
 **** Companies:
-- Technobots: http://www.technobotsonline.com
-- Thorlabs:  http:/www.thorlabs.com
-- CPC-Farnell:http://cpc.farnell.com/
-- RS:http://uk.rs-online.com/web/
-- Techsoft:http://www.techsoft.co.uk/
-- Maplin: http://www.maplin.co.uk
+- Technobots:  http://www.technobotsonline.com
+- Thorlabs:    http:/www.thorlabs.com
+- CPC-Farnell: http://cpc.farnell.com/
+- RS:          http://uk.rs-online.com/web/
+- Techsoft:    http://www.techsoft.co.uk/
+- Maplin:      http://www.maplin.co.uk
 
 All components but the optics-screws (Thorlabs) can be obtained
 commercially. If other leadscrews are used, the software has to be
